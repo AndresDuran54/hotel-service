@@ -8,6 +8,12 @@ spring:
     password: cna583RW
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    properties:
+      hibernate:
+        boot:
+          allow_jdbc_metadata_access: false
     hibernate:
       ddl-auto: update
+      boot:
+        allow_jdbc_metadata_access: false
     show-sql: true
