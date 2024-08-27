@@ -21,6 +21,8 @@ jobs:
               run: |
                 cd ./target
                 ls
+            - uses: jfrog/setup-jfrog-cli@v4
+            - run: jf --version
 
 
     
