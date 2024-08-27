@@ -1,0 +1,17 @@
+name: Integration Artifactory
+
+on:
+    push: 
+        branches:
+            - "main"
+
+jobs:
+    add_integration:
+        runs-on: [ ubuntu-latest ]
+        steps:
+            - name: Test
+              run: echo "Probando el pipeline"
+
+    
+
+  
