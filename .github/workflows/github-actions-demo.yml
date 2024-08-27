@@ -17,6 +17,8 @@ jobs:
                   distribution: 'temurin'
             - name: Test
               run: echo "Probando el pipeline"
+            - name: Build with Maven
+              run: mvn clean package
 
     
 
