@@ -30,7 +30,9 @@ jobs:
             - name: Ping to artifactory
               run: jf rt ping --url ${{ vars.JF_URL }}/artifactory
             - name: Upload the .jar
-              run: ls
+              run: |
+                cd ./target
+                jf rt u ducco-0.0.1-SNAPSHOT.jar test
 # --access-token $JF_ACCESS_TOKEN
 
 
