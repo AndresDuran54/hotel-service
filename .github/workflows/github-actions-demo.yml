@@ -28,7 +28,7 @@ jobs:
             - run: echo "${{ vars.JF_URL }}"
             - run: echo $JF_ACCESS_TOKEN
             - name: Login to artifactory
-              run: jf c add --access-token $JF_ACCESS_TOKEN
+              run: jf c add --access-token "${{ secrets.JF_ACCESS_TOKEN }}"
             - name: Ping to artifactory
               run: jf rt ping --url $JF_URL/artifactory
 
