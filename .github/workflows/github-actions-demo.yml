@@ -20,7 +20,7 @@ jobs:
             - name: Tests
               run: |
                 cd ./target
-                ls
+                ls -la
             - uses: jfrog/setup-jfrog-cli@v4
               env:
                 JF_URL: ${{ vars.JF_URL }}
