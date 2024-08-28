@@ -35,7 +35,7 @@ jobs:
                 # jf rt u ducco-0.0.1-SNAPSHOT.jar texts
             - name: Upload text
               run: |
-                echo "Prueba" > text.txt
+                echo "Prueba 2" > text.txt
                 ls -la
                 jf rt u text.txt texts
 # --access-token $JF_ACCESS_TOKEN
