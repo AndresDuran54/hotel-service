@@ -5,6 +5,10 @@ on:
         branches:
             - "main"
 
+env:
+  JF_URL: ${{ vars.JF_URL }}
+  JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+  
 jobs:
     add_integration:
         runs-on: [ ubuntu-latest ]
@@ -15,32 +19,20 @@ jobs:
               with:
                   java-version: '22'
                   distribution: 'temurin'
-            - name: Build with Maven
-              run: mvn clean package -DskipTests
-            - name: Tests
-              run: |
-                cd ./target
-                ls -la
+            - name: Install dependencies Maven
+              run: mvn install
+            # - name: Build with Maven
+              # run: mvn clean package -DskipTests
             - uses: jfrog/setup-jfrog-cli@v4
-              env:
-                JF_URL: ${{ vars.JF_URL }}
-                JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
             - name: Login to artifactory
-              run: jf c add --access-token "${{ secrets.JF_ACCESS_TOKEN }}"
+              run: jf c add --access-token "$JF_ACCESS_TOKEN"
             - name: Ping to artifactory
-              run: jf rt ping --url ${{ vars.JF_URL }}/artifactory
-            # - name: Upload the .jar
-              # run: |
-                # cd ./target
-                # jf rt u ducco-0.0.1-SNAPSHOT.jar texts
+              run: jf rt ping --url $JF_URL/artifactory
             - name: Upload text
               run: |
-                echo "Prueba 2" > text.txt
+                echo "Prueba" > text.txt
                 ls -la
                 jf rt u text.txt texts
-# --access-token $JF_ACCESS_TOKEN
-
-
 
 
 
