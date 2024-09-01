@@ -1,3 +1,9 @@
 <settings>
-  <!-- Configuraciones opcionales -->
+  <mirrors>
+    <mirror>
+      <id>central</id>
+      <mirrorOf>central</mirrorOf>
+      <url>https://t6q4wrsp-8082.brs.devtunnels.ms/artifactory/test</url>
+    </mirror>
+  </mirrors>
 </settings>
