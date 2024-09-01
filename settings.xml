@@ -6,4 +6,11 @@
       <url>https://t6q4wrsp-8082.brs.devtunnels.ms/artifactory/test</url>
     </mirror>
   </mirrors>
+  <servers>
+    <server>
+      <id>central</id>
+      <username>admin</username>
+      <password>password</password>
+    </server>
+  </servers>
 </settings>
