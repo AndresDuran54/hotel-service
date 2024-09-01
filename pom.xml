@@ -77,4 +77,16 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+		<id>central</id>
+		<name>6490a088d069-releases</name>
+		<url>https://t6q4wrsp-8082.brs.devtunnels.ms/artifactory/test</url>
+		</repository>
+		<snapshotRepository>
+		<id>snapshots</id>
+		<name>6490a088d069-snapshots</name>
+		<url>https://t6q4wrsp-8082.brs.devtunnels.ms/artifactory/test</url>
+		</snapshotRepository>
+  	</distributionManagement>
 </project>

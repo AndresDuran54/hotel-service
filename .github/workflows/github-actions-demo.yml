@@ -20,7 +20,7 @@ jobs:
                   java-version: '22'
                   distribution: 'temurin'
             - name: Install dependencies Maven
-              run: mvn install -DskipTests -s ./settings.xml
+              run: mvn install -DskipTests
             - name: Test
               run: |
                   ls
